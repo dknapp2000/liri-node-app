@@ -2,6 +2,10 @@ var request = require("request");
 var spotify = require("spotify");
 var omdb = require("omdb");
 var keys = require("./keys.js");
+var options = [ 'twitter-me', 'spotify', 'movie-me' ];
+var action = process.argv[2];
+
+console.log( keys );
 
 switch (action) {
     case 'twitter-me':
@@ -11,6 +15,7 @@ switch (action) {
     case 'movie-me':
         break;
     default:
+        console.log("Pulease choose one of ", options.join(" ") );
         break;
 }
 // console.log(request);
@@ -40,6 +45,6 @@ spotify.search({ type: 'track', query: 'Adia' }, function(err, data) {
         console.log('Error occurred: ' + err);
         return;
     }
-    console.log( JSON.stringify( data ) );
+    console.log( JSON.stringify( data, null, 2 ) );
     
 });
