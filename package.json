@@ -16,6 +16,7 @@
     "url": "https://github.com/dknapp2000/liri-node-app/issues"
   },
   "dependencies": {
+    "inquirer": "^3.0.1",
     "omdb": "^0.7.0",
     "request": "^2.79.0",
     "spotify": "^0.3.0",
