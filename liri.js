@@ -3,6 +3,7 @@ var spotify = require("spotify");
 var inquirer = require( "inquirer" );
 var omdb = require("omdb");
 var twitter = require( "twitter" );
+var fs = require( "fs" );
 var keys = require("./keys.js");
 var options = [ 'my-tweets', 'spotify-this-song', 'movie-this', "do-what-it-says" ];
 
@@ -16,34 +17,58 @@ var client = new twitter({
 const action = process.argv[2];
 const arg = process.argv.splice(3).join(" ");
 
-console.log( "Action   = " + action );
-console.log( "argument = " + arg );
-
-    
-switch (action) {
-    case 'my-tweets':
-        console.log( "Let's check twitter." );
-        twitterCheck( arg );
-        break;
-    case 'spotify-this-song':
-        console.log( "OK, let's make some music." );
-        spotCheck( arg );
-        break;
-    case 'movie-this':
-        console.log( "Bring the popcorn!" );
-        omdbCheck( arg );
-        break;
-    case 'do-what-it-says':
-    default:
-        console.log("Pulease choose one of ", options.join(" ") );
-        break;
+if ( action === "do-what-it-says" ) {
+    console.log( "using random.txt file for input." );
+    const random = fs.readFile( "random.txt", "UTF-8", function( err, data) {
+        if ( err ) throw err;
+        console.log( data );
+        let parts = data.split(",");
+        var action = parts[0];
+        let arg = parts.splice(1).join(" ");
+        arg = arg.replace( /\"/g, '' );
+        console.log( action );
+        console.log( arg );
+        execAction( action, arg );
+    })
+} else {
+    execAction( action, arg );
 }
 
+function execAction( action, arg ) {    
+    console.log( "Action   = " + action );
+    console.log( "argument = " + arg );
+    switch (action) {
+        case 'my-tweets':
+            console.log( "Let's check twitter." );
+            twitterCheck( arg );
+            break;
+        case 'spotify-this-song':
+            console.log( "OK, let's make some music." );
+            spotCheck( arg );
+            break;
+        case 'movie-this':
+            console.log( "Bring the popcorn!" );
+            omdbCheck( arg );
+            break;
+        case 'do-what-it-says':
+        default:
+            console.log("Pulease choose one of ", options.join(" ") );
+            break;
+    }
+}
 
 function omdbCheck( arg ) {
     omdb.search( arg || 'saw', function(err, movies) {
         if (err) {
-            return console.error(err);
+            console.error(err);
+            var response = require( "./inception.json" ); 
+            console.log( "===========================================================================" );
+            console.log( "==== ATTENTION: omdb API had been experiencing problems, in the event =====" );
+            console.log( "==== that the process is not able to retrieve information from omdb   =====" );
+            console.log( "==== the process will return the locally stored omdb information for  =====" );
+            console.log( "==== for Inception.    Thank you.   - the management                  =====" );
+            console.log( "===========================================================================" );
+            var movies = [ response ];
         }
 
         if (movies.length < 1) {
@@ -51,14 +76,17 @@ function omdbCheck( arg ) {
         }
 
         movies.forEach(function(movie) {
-            console.log('%s (%d)', movie.title, movie.year);
+            console.log( "Title           : ", movie.Title );
+            console.log( "Year released   : ", movie.Year );
+            console.log( "IMDB Rating     : ", movie.imdbRating );
+            console.log( "Country         : ", movie.Country );
+            console.log( "Language        : ", movie.Language );
+            console.log( "Plot            : ", movie.Plot );
+            console.log( "Actors          : ", movie.Actors );
+            console.log( "Rotten tomatoes : ", movie.RottenTomatoes || 'Unavailable' );
+            console.log( "Rotten URL      : ", movie.RottenURL || 'Unavailable' );
         });
 
-        // Saw (2004) 
-        // Saw II (2005) 
-        // Saw III (2006) 
-        // Saw IV (2007) 
-        // ... 
     });
 }
 
