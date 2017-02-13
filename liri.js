@@ -4,6 +4,7 @@ var inquirer = require( "inquirer" );
 var omdb = require("omdb");
 var twitter = require( "twitter" );
 var fs = require( "fs" );
+var moment = require( "moment" );
 var keys = require("./keys.js");
 var options = [ 'my-tweets', 'spotify-this-song', 'movie-this', "do-what-it-says" ];
 
@@ -115,13 +116,18 @@ function spotCheck( arg ) {
 var params = {screen_name: 'dknapp2000'};
 
 function twitterCheck( arg ) { 
-    client.get('search/tweets', { q: "node.js"}, function(error, tweets, response) {
+    client.get('statuses/user_timeline', { q: "node.js"}, function(error, tweets, response) {
         if (!error) {
-            for ( var i = 0; i<tweets.statuses.length; i++ ) {
-                console.log( tweets.statuses[i].text)
+            for ( var i = 0; i<20 ; i++ ) {
+                let time = moment( tweets[i].created_at );
+                console.log( time.format("YYYY-MM-DD HH:mm:ss"), ":", tweets[i].text)
             }
         } else { 
             console.log( error );
         }
     });
+}
+
+function logger( msg ) {
+    
 }
