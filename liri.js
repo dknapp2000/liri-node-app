@@ -119,8 +119,10 @@ function twitterCheck( arg ) {
     client.get('statuses/user_timeline', { q: "node.js"}, function(error, tweets, response) {
         if (!error) {
             for ( var i = 0; i<20 ; i++ ) {
-                let time = moment( tweets[i].created_at );
-                console.log( time.format("YYYY-MM-DD HH:mm:ss"), ":", tweets[i].text)
+                let tm = new Date( tweets[i].created_at );
+                let time = moment( tm );
+                // console.log( "JS Date: ", tm );
+                console.log( time.format("YYYY-MM-DD hh:mm:ss"), ":", tweets[i].text)
             }
         } else { 
             console.log( error );
