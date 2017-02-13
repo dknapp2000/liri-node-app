@@ -8,6 +8,10 @@ var moment = require( "moment" );
 var keys = require("./keys.js");
 var options = [ 'my-tweets', 'spotify-this-song', 'movie-this', "do-what-it-says" ];
 
+const logfile = "liri.log";
+
+logger( "Startup" );
+
 var client = new twitter({
   consumer_key: keys.twitterKeys.consumer_key,
   consumer_secret: keys.twitterKeys.consumer_secret,
@@ -129,5 +133,9 @@ function twitterCheck( arg ) {
 }
 
 function logger( msg ) {
-    
+	const message =  moment().format( 'YYYY/MM/DD.hh:mm:ss' ) + ": " + msg;   
+	console.log( message );
+	fs.appendFile( logfile, message + "\n", "UTF8", function(err) {
+		if ( err ) throw err;
+	});
 }
