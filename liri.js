@@ -112,12 +112,16 @@ function showTmdbMovie( movieId ) {
     request( url, function( err, response, body ) {
         var resp = JSON.parse( body );
             logger( `Title ${resp.title} (${resp.tagline})`)
-            logger( "Title           : " + resp.Title );
-            logger( "Year released   : " + resp.release_date );
-            logger( "Country         : " + resp.production_countries[0].iso_3166_1 );
-            logger( "Language        : " + resp.spoken_languages[0].name );
-            logger( "Plot            : " + resp.overview );
+            logger( "Title           : " + contentCheck( resp.Title ) );
+            logger( "Year released   : " + contentCheck( resp.release_date ) );
+            if ( resp.production_countries[0] ) logger( "Country         : " + contentCheck( resp.production_countries[0].iso_3166_1 ) );
+            if ( resp.spoken_languages[0]     ) logger( "Language        : " + contentCheck( resp.spoken_languages[0].name ) );
+            logger( "Plot            : " + contentCheck( resp.overview ) );
     })
+}
+
+function contentCheck( string ) {
+    return string ? string : "Unavailable";
 }
 
 function omdbCheck( arg ) {
