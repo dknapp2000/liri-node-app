@@ -274,3 +274,82 @@
 2017/02/15.01:34:45: Country         : US
 2017/02/15.01:34:45: Language        : English
 2017/02/15.01:34:45: Plot            : The Bower Family Band petitions the Democratic National Committee to sing a Grover Cleveland rally song at the 1888 convention, but decide instead to move to the Dakota territory on the urging of a suitor to their eldest daughter. There, Grampa Bower causes trouble with his pro-Cleveland ideas, as Dakota residents are overwhelmingly Republican, and hope to get the territory admitted as two states (North and South Dakota) rather than one in order to send four Republican senators to Washington. Cleveland opposed this plan, refusing to refer to Congress the plan to organize the Dakotas this way. When Cleveland wins the popular vote, but Harrison the presidency due to the electoral college votes, the Dakotans (particularly the feuding young couple) resolve to live together in peace, and Cleveland grants statehood to the two Dakotas before he leaves office (along with two Democrat-voting states, evening the gains for both parties).
+2017/02/15.01:45:32: Startup
+2017/02/15.01:45:32: Action   = undefined
+2017/02/15.01:45:32: argument = 
+2017/02/15.01:45:32: Pulease choose one of my-tweets spotify-this-song movie-this  tmdb-this do-what-it-says
+2017/02/15.01:45:48: Startup
+2017/02/15.01:45:48: Action   = tmdb-this
+2017/02/15.01:45:48: argument = flow over the
+2017/02/15.01:45:48: Buy out the eight o'clock show!
+2017/02/15.01:45:48: Title À Flor do Mar ()
+2017/02/15.01:45:48: Title           : undefined
+2017/02/15.01:45:48: Year released   : 1986-10-02
+2017/02/15.01:45:48: Country         : PT
+2017/02/15.01:45:48: Language        : English
+2017/02/15.01:45:48: Plot            : Laura Rossellini, a widow from Rome, vacations on the Algarve coast one hot summer. One day while sunbathing, she finds a wounded man named Robert drifting in the surf on a rubber raft. She takes him home, and, after he is revived, learns his story. As they talk, their mutual attraction grows, until a group of armed men suddenly arrives looking for Robert.
+2017/02/15.01:46:06: Startup
+2017/02/15.01:46:06: Action   = tmdb-this
+2017/02/15.01:46:06: argument = flow over the cucoo
+2017/02/15.01:46:06: Buy out the eight o'clock show!
+2017/02/15.01:46:21: Startup
+2017/02/15.01:46:21: Action   = omdb-this
+2017/02/15.01:46:21: argument = flow over the cucoo
+2017/02/15.01:46:21: Pulease choose one of my-tweets spotify-this-song movie-this  tmdb-this do-what-it-says
+2017/02/15.01:46:29: Startup
+2017/02/15.01:46:29: Action   = omdb-this
+2017/02/15.01:46:29: argument = flew over the cucoo
+2017/02/15.01:46:29: Pulease choose one of my-tweets spotify-this-song movie-this  tmdb-this do-what-it-says
+2017/02/15.01:46:38: Startup
+2017/02/15.01:46:38: Action   = tmdb-this
+2017/02/15.01:46:38: argument = flew over the cucoo
+2017/02/15.01:46:38: Buy out the eight o'clock show!
+2017/02/15.01:47:35: Startup
+2017/02/15.01:47:35: Action   = tmdb-this
+2017/02/15.01:47:35: argument = inception
+2017/02/15.01:47:35: Buy out the eight o'clock show!
+2017/02/15.01:47:36: Title Inception (Your mind is the scene of the crime.)
+2017/02/15.01:47:36: Title           : undefined
+2017/02/15.01:47:36: Year released   : 2010-07-14
+2017/02/15.01:47:36: Country         : US
+2017/02/15.01:47:36: Language        : English
+2017/02/15.01:47:36: Plot            : Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+2017/02/15.01:47:50: Startup
+2017/02/15.01:47:50: Action   = tmdb-this
+2017/02/15.01:47:50: argument = one flew over
+2017/02/15.01:47:50: Buy out the eight o'clock show!
+2017/02/15.01:47:54: Title One Flew Over the Cuckoo's Nest (If he's crazy, what does that make you?)
+2017/02/15.01:47:54: Title           : undefined
+2017/02/15.01:47:54: Year released   : 1975-11-18
+2017/02/15.01:47:54: Country         : US
+2017/02/15.01:47:54: Language        : English
+2017/02/15.01:47:54: Plot            : While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.
+2017/02/15.01:48:10: Startup
+2017/02/15.01:48:10: Action   = tmdb-this
+2017/02/15.01:48:10: argument = one flew over
+2017/02/15.01:48:10: Buy out the eight o'clock show!
+2017/02/15.01:48:13: Title One Flew Over the Cuckoo's Nest (If he's crazy, what does that make you?)
+2017/02/15.01:48:13: Title           : undefined
+2017/02/15.01:48:13: Year released   : 1975-11-18
+2017/02/15.01:48:13: Country         : US
+2017/02/15.01:48:13: Language        : English
+2017/02/15.01:48:13: Plot            : While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.
+2017/02/15.01:48:19: Startup
+2017/02/15.01:48:19: Action   = tmdb-this
+2017/02/15.01:48:19: argument = asdfasdfasdfasdf
+2017/02/15.01:48:19: Buy out the eight o'clock show!
+2017/02/15.01:50:30: Startup
+2017/02/15.01:50:30: Action   = tmdb-this
+2017/02/15.01:50:30: argument = one flew over
+2017/02/15.01:50:30: Buy out the eight o'clock show!
+2017/02/15.01:50:31: Title One Flew Over the Cuckoo's Nest (If he's crazy, what does that make you?)
+2017/02/15.01:50:31: Title           : undefined
+2017/02/15.01:50:31: Year released   : 1975-11-18
+2017/02/15.01:50:31: Country         : US
+2017/02/15.01:50:31: Language        : English
+2017/02/15.01:50:31: Plot            : While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.
+2017/02/15.01:50:39: Startup
+2017/02/15.01:50:39: Action   = tmdb-this
+2017/02/15.01:50:39: argument = asdfasdfasdfasdf
+2017/02/15.01:50:39: Buy out the eight o'clock show!
+2017/02/15.01:50:39: Nothing found for 'asdfasdfasdfasdf'

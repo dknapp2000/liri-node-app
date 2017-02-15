@@ -82,7 +82,9 @@ function tmdbCheck( arg ) {
             choices: [],
         }];
 
-        if ( resp.results.length > 1 ) { 
+        if ( resp.results.length === 0 ) {
+            logger( `Nothing found for '${arg}'`)
+        } else if ( resp.results.length > 1 ) { 
             for ( let i = 0; i<resp.results.length; i++ ) {
                 let release_year = resp.results[i].release_date ? "(" + resp.results[i].release_date.substring(0,4) + ")" : "";
                 let choice = { 
@@ -96,7 +98,7 @@ function tmdbCheck( arg ) {
             .then( function( answer ) {
                 showTmdbMovie( answer.movie );
             })
-        } else {
+        } else {  // response count === 1
             showTmdbMovie( resp.results[0].id );
         }
     })
