@@ -55,11 +55,67 @@ function execAction( action, arg ) {
             logger( "Bring the popcorn!" );
             omdbCheck( arg );
             break;
+        case 'tmdb-this':
+            logger( "Buy out the eight o'clock show!" );
+            tmdbCheck( arg );
+            break;
         case 'do-what-it-says':
         default:
             logger("Pulease choose one of " + options.join(" ") );
             break;
     }
+}
+
+function tmdbCheck( arg ) {
+    var urlTemplate = 'https://api.themoviedb.org/3/search/movie?api_key=22c485953fb4e0c2ba44c7e3148b7d3f&query=!MOVIE!';
+    var movie = arg.replace( /\s+/g, '+' );
+    var url = urlTemplate.replace( /!MOVIE!/, movie );
+
+    request( url, function( err, response, body ) {
+        if ( err ) throw err;
+
+        var resp = JSON.parse( body );
+        var inquiry = [{
+            name: "movie",
+            message: "Please select: ",
+            type: "list",
+            choices: [],
+        }];
+
+        if ( resp.results.length > 1 ) { 
+            for ( let i = 0; i<resp.results.length; i++ ) {
+                let release_year = resp.results[i].release_date ? "(" + resp.results[i].release_date.substring(0,4) + ")" : "";
+                let choice = { 
+                    value: resp.results[i].id,
+                    name: `${resp.results[i].title} ${release_year}`
+                }
+                inquiry[0].choices.push( choice );
+            }
+            inquiry[0].message = `There were ${resp.results.length} movies found when searching for '${movie}', Please choose one:`;
+            inquirer.prompt( inquiry )
+            .then( function( answer ) {
+                showTmdbMovie( answer.movie );
+            })
+        } else {
+            showTmdbMovie( resp.results[0].id );
+        }
+    })
+}
+
+function showTmdbMovie( movieId ) {
+    var urlTemplate = 'https://api.themoviedb.org/3/movie/!MOVIE-ID!?api_key=22c485953fb4e0c2ba44c7e3148b7d3f';
+    var movie = arg.replace( /\s+/g, '+' );
+    var url = urlTemplate.replace( /!MOVIE-ID!/, movieId );
+
+    request( url, function( err, response, body ) {
+        var resp = JSON.parse( body );
+            logger( `Title ${resp.title} (${resp.tagline})`)
+            logger( "Title           : " + resp.Title );
+            logger( "Year released   : " + resp.release_date );
+            logger( "Country         : " + resp.production_countries[0].iso_3166_1 );
+            logger( "Language        : " + resp.spoken_languages[0].name );
+            logger( "Plot            : " + resp.overview );
+    })
 }
 
 function omdbCheck( arg ) {
