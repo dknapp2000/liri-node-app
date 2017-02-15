@@ -6,7 +6,7 @@ var twitter = require( "twitter" );
 var fs = require( "fs" );
 var moment = require( "moment" );
 var keys = require("./keys.js");
-var options = [ 'my-tweets', 'spotify-this-song', 'movie-this', "do-what-it-says" ];
+var options = [ 'my-tweets', 'spotify-this-song', 'movie-this', , 'tmdb-this', "do-what-it-says" ];
 
 const logfile = "liri.log";
 
